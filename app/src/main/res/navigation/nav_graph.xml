@@ -4,5 +4,10 @@
             android:id="@+id/nav_graph" app:startDestination="@id/launchingScreenFragment">
 
     <fragment android:id="@+id/launchingScreenFragment" android:name="com.bb.price.LaunchingScreenFragment"
-              android:label="BBP" tools:layout="@layout/fragment_launching_screen"/>
+              android:label="BBP" tools:layout="@layout/fragment_launching_screen">
+        <action android:id="@+id/action_launchingScreenFragment_self" app:destination="@id/launchingScreenFragment"/>
+    </fragment>
+    <fragment android:id="@+id/cart_fragment" android:name="com.bb.price.CartFragment" android:label="Cart"
+              tools:layout="@layout/cart_fragment"
+    />
 </navigation>
