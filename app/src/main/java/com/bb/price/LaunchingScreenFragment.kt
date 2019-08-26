@@ -119,9 +119,6 @@ class LaunchingScreenFragment : Fragment() {
                 filterdNames.add(s)
             }
         }
-
-        //calling a method of the launchScreenAdapter class and passing the filtered list
-        //launchscreen_items_category_rcv..filterList(filterdNames)
         launchScreenAdapter?.filterList(filterdNames)
     }
 

@@ -51,7 +51,7 @@ class CategoryItemsList : Fragment(), CategoryListAdapter.quantityChangeListener
 
         list.add(
             CategoryItemsModel(
-                resId = R.drawable.ic_menu_camera,
+                resId = R.drawable.ic_launcher_background,
                 title = "Tittle 1",
                 act_price = 10.0,
                 special_price = 2.0
@@ -59,7 +59,7 @@ class CategoryItemsList : Fragment(), CategoryListAdapter.quantityChangeListener
         )
         list.add(
             CategoryItemsModel(
-                resId = R.drawable.ic_menu_camera,
+                resId = R.drawable.ic_launcher_background,
                 title = "Tittle 1",
                 act_price = 10.0,
                 special_price = 2.0
@@ -67,7 +67,7 @@ class CategoryItemsList : Fragment(), CategoryListAdapter.quantityChangeListener
         )
         list.add(
             CategoryItemsModel(
-                resId = R.drawable.ic_menu_camera,
+                resId = R.drawable.ic_launcher_background,
                 title = "Tittle 1",
                 act_price = 10.0,
                 special_price = 2.0
@@ -75,7 +75,7 @@ class CategoryItemsList : Fragment(), CategoryListAdapter.quantityChangeListener
         )
         list.add(
             CategoryItemsModel(
-                resId = R.drawable.ic_menu_camera,
+                resId = R.drawable.ic_launcher_background,
                 title = "Tittle 1",
                 act_price = 10.0,
                 special_price = 2.0
@@ -83,7 +83,7 @@ class CategoryItemsList : Fragment(), CategoryListAdapter.quantityChangeListener
         )
         list.add(
             CategoryItemsModel(
-                resId = R.drawable.ic_menu_camera,
+                resId = R.drawable.ic_launcher_background,
                 title = "Tittle 1",
                 act_price = 10.0,
                 special_price = 2.0
@@ -91,7 +91,7 @@ class CategoryItemsList : Fragment(), CategoryListAdapter.quantityChangeListener
         )
         list.add(
             CategoryItemsModel(
-                resId = R.drawable.ic_menu_camera,
+                resId = R.drawable.ic_launcher_background,
                 title = "Tittle 1",
                 act_price = 10.0,
                 special_price = 2.0
@@ -99,7 +99,7 @@ class CategoryItemsList : Fragment(), CategoryListAdapter.quantityChangeListener
         )
         list.add(
             CategoryItemsModel(
-                resId = R.drawable.ic_menu_camera,
+                resId = R.drawable.ic_launcher_background,
                 title = "Tittle 1",
                 act_price = 10.0,
                 special_price = 2.0

@@ -70,7 +70,7 @@ class CategoryListAdapter :
                 sClickListener?.onPlusClick(
                     adapterPosition,
                     itemView.cate_item_qty.text.toString().toInt(),
-                    it
+                    itemView
                 )
             }
             itemView.cate_item_minus.setOnClickListener {
@@ -78,7 +78,7 @@ class CategoryListAdapter :
                 sClickListener?.onMinusClick(
                     adapterPosition,
                     itemView.cate_item_qty.text.toString().toInt(),
-                    it
+                    itemView
                 )
             }
         }
