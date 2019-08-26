@@ -1,6 +1,8 @@
 package com.bb.price
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -12,6 +14,9 @@ import java.util.*
 
 class LaunchingScreenFragment : Fragment() {
     lateinit var settingsList: ArrayList<String>
+    var filterdNames = ArrayList<LaunchScreenModel>()
+    lateinit var categories: ArrayList<LaunchScreenModel>
+    var launchScreenAdapter: LaunchScreenAdapter? = null
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -28,6 +33,8 @@ class LaunchingScreenFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         settingsList = arrayListOf()
+        launchScreenAdapter = LaunchScreenAdapter()
+
         setHasOptionsMenu(true)
     }
 
@@ -35,7 +42,10 @@ class LaunchingScreenFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
 
 
-        val categories = loadTheCategories()
+        categories = loadTheCategories()
+
+
+
 
         launchscreen_items_category_rcv.apply {
 
@@ -45,8 +55,23 @@ class LaunchingScreenFragment : Fragment() {
              * add divider lines
              */
             //addItemDecoration(DividerItemDecoration(context, DividerItemDecoration.VERTICAL))
-            adapter = LaunchScreenAdapter(categories)
+            adapter = launchScreenAdapter
         }
+        launchScreenAdapter?.setdata(categories)
+        launchscreen_search_field.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(charSequence: CharSequence, i: Int, i1: Int, i2: Int) {
+
+            }
+
+            override fun onTextChanged(charSequence: CharSequence, i: Int, i1: Int, i2: Int) {
+
+            }
+
+            override fun afterTextChanged(editable: Editable) {
+                //after the change calling the method and passing the search input
+                filter(editable.toString())
+            }
+        })
     }
 
     private fun loadTheCategories(): ArrayList<LaunchScreenModel> {
@@ -79,6 +104,25 @@ class LaunchingScreenFragment : Fragment() {
     }
 
 
+    private fun filter(text: String) {
+        filterdNames.let {
+            it.clear()
+        }
+        //new array list that will hold the filtered data
+        filterdNames = ArrayList<LaunchScreenModel>()
 
+        //looping through existing elements
+        for (s in categories) {
+            //if the existing elements contains the search input
+            if (s.title?.toLowerCase()?.contains(text.toLowerCase())!!) {
+                //adding the element to filtered list
+                filterdNames.add(s)
+            }
+        }
+
+        //calling a method of the launchScreenAdapter class and passing the filtered list
+        //launchscreen_items_category_rcv..filterList(filterdNames)
+        launchScreenAdapter?.filterList(filterdNames)
+    }
 
 }

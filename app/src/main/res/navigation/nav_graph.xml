@@ -6,8 +6,25 @@
     <fragment android:id="@+id/launchingScreenFragment" android:name="com.bb.price.LaunchingScreenFragment"
               android:label="BBP" tools:layout="@layout/fragment_launching_screen">
         <action android:id="@+id/action_launchingScreenFragment_self" app:destination="@id/launchingScreenFragment"/>
+        <action
+                android:id="@+id/action_launchingScreenFragment_to_cart_fragment"
+                app:destination="@id/cart_fragment"
+                app:popUpTo="@id/cart_fragment" />
+        <action
+                android:id="@+id/action_launchingScreenFragment_to_categoryItemsList"
+                app:destination="@id/categoryItemsList" />
     </fragment>
     <fragment android:id="@+id/cart_fragment" android:name="com.bb.price.CartFragment" android:label="Cart"
               tools:layout="@layout/cart_fragment"
     />
+    <fragment
+            android:id="@+id/categoryItemsList"
+            android:name="com.bb.price.CategoryItemsList"
+            android:label="{title}"
+            tools:layout="@layout/fragment_category_items_list">
+
+        <argument
+                android:name="title"
+                app:argType="string" />
+    </fragment>
 </navigation>
